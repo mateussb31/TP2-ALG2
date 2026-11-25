@@ -1,0 +1,16 @@
+|--- hull_fraction <= 0.29
+|   |--- aspect_ratio <= 7.30
+|   |   |--- spatial_entropy <= 0.97
+|   |   |   |--- value: [3.44]
+|   |   |--- spatial_entropy >  0.97
+|   |   |   |--- value: [6.22]
+|   |--- aspect_ratio >  7.30
+|   |   |--- value: [0.12]
+|--- hull_fraction >  0.29
+|   |--- nn_cv <= 0.52
+|   |   |--- value: [2.53]
+|   |--- nn_cv >  0.52
+|   |   |--- mst_leaf_fraction <= 0.24
+|   |   |   |--- value: [0.02]
+|   |   |--- mst_leaf_fraction >  0.24
+|   |   |   |--- value: [0.93]

@@ -1,0 +1,322 @@
+RESUMO DOS PROMPTS DE ENTRADA
+
+REGRAS DEFINIDAS PELO USUARIO NO INICIO DA SESSAO
+
+Prompt:
+"Responda em portugues, me guie um passo por vez e use sempre comandos em PowerShell.
+Nunca diga que algo funciona sem eu ter executado. Quando estiver falando de memoria ou
+de algo que nao foi verificado, deixe isso claro. Nao invente referencias. Mantenha os
+comentarios do codigo minimos e em minusculas. Se algum resultado parecer estranho,
+investigue antes de considerar que ele esta correto."
+
+PROMPTS SOBRE CONTEXTO E ORGANIZACAO
+
+Prompt:
+"Leia o enunciado do TP2, os documentos de organizacao e divisao de tarefas e o codigo
+dos experimentos que anexei. Entenda o que precisa ser executado e me diga qual deve ser
+o primeiro passo."
+
+Prompt:
+"Compare o que o enunciado exige com a estrutura atual do projeto e do pipeline de
+experimentos. Identifique o que ja esta pronto e o que ainda precisa ser executado."
+
+PROMPTS SOBRE INTEGRACAO COM O CODIGO DA PESSOA 1
+
+Prompt:
+"Vou enviar a arvore de pastas e os arquivos da implementacao da Pessoa 1. Confira se
+as assinaturas das heuristicas e do Branch-and-Bound sao compativeis com o worker e com
+o pipeline de experimentos."
+
+Prompt:
+"Leia este branch_and_bound.py e verifique se a assinatura do solve, os parametros, o
+retorno e o BnBResult sao compativeis com o codigo que executa os experimentos."
+
+Prompt:
+"O enunciado pede timeout de 30 minutos. O pipeline esta propondo um limite diferente.
+Qual configuracao devemos usar para ficar fiel ao enunciado?"
+
+PROMPTS SOBRE PREPARACAO DAS INSTANCIAS
+
+Prompt:
+"Confira o script de preparacao das instancias e verifique se ele esta gerando as
+instancias principais e as sinteticas esperadas, incluindo a quantidade de instancias
+e a distribuicao dos valores de N."
+
+Prompt:
+"Confira o compute_reference.py e explique como devemos obter os custos de referencia
+para validar os resultados das instancias."
+
+Prompt:
+"Confira o compute_features.py e verifique se as caracteristicas geometricas necessarias
+para a analise de sensibilidade estao sendo calculadas corretamente."
+
+PROMPT SOBRE REGISTRO DO TERMINAL
+
+Prompt:
+"Como posso salvar toda a execucao do terminal no PowerShell para manter um registro dos
+experimentos e depois conseguir documentar o que foi executado?"
+
+PROMPTS SOBRE TESTE DAS HEURISTICAS
+
+Prompt:
+"Quero fazer um teste de integracao das heuristicas antes de executar a bateria completa.
+Sugira o que devo testar e quais resultados devo conferir."
+
+Prompt:
+"O Twice-around-the-tree esta dando um erro de importacao/modulo. Analise o erro e indique
+onde esta o problema na integracao."
+
+Prompt:
+"A Convex Hull esta aparecendo com aproximadamente o mesmo tempo para varios valores
+de N. Investigue se isso pode ser causado por inicializacao, imports ou warm-up em vez
+do custo real do algoritmo."
+
+Prompt:
+"Vou enviar o worker.py depois de aplicar a sugestao de warm-up. Confira se a chamada
+esta no lugar correto e se ela realmente sera executada antes das medicoes."
+
+Prompt:
+"Confira os resultados do teste das heuristicas depois das correcoes e diga se existe
+alguma divergencia ou comportamento anormal que devemos investigar antes da bateria."
+
+PROMPTS SOBRE O BRANCH-AND-BOUND E LOWER BOUND
+
+Prompt:
+"Quero fazer um teste de fumaca do Branch-and-Bound antes da bateria completa. Sugira
+uma configuracao de teste com limite de tempo menor e quais metricas devemos observar."
+
+Prompt:
+"Leia este bounds.py e avalie os limites inferiores usados pelo Branch-and-Bound.
+Eles parecem corretos? Sao fortes ou fracos? Qual deles pode estar causando maior custo?"
+
+Prompt:
+"O profiling preliminar sugere que a MST esta custando bastante. Vale a pena substituir
+ou fortalecer o lower bound antes de executar os experimentos? Quais seriam os riscos
+para a comparabilidade do trabalho?"
+
+Prompt:
+"Decidi manter o lower bound atual. Quais metricas devemos registrar para avaliar
+posteriormente o custo desse limite sem alterar a implementacao?"
+
+PROMPTS SOBRE CHRISTOFIDES E MATCHING
+
+Prompt:
+"Leia christofides.py e matching.py. Verifique como o emparelhamento dos vertices de
+grau impar esta sendo feito e se ele e exato ou guloso."
+
+Prompt:
+"Quero identificar o custo do matching dentro do Christofides. Como devo instrumentar
+ou fazer profiling dessa parte sem alterar o resultado do algoritmo?"
+
+PROMPTS SOBRE PREPARACAO DE UMA SEGUNDA MAQUINA
+
+Prompt:
+"Preciso executar os experimentos em outra maquina. O Python nao esta no PATH e nao
+tenho permissao de administrador. Quero usar uma versao do Python que ja esta instalada
+sem alterar ou remover as outras versoes. Como configurar isso?"
+
+Prompt:
+"O projeto vai ficar na pasta Downloads. Gere os comandos PowerShell para criar o ambiente
+virtual, instalar as dependencias necessarias e executar o pipeline sem precisar de
+permissao de administrador."
+
+Prompt:
+"Preciso compactar os arquivos de codigo, instancias e logs para levar para outra maquina.
+Qual comando PowerShell devo usar e onde e melhor criar o zip?"
+
+PROMPTS SOBRE VALIDACAO ENTRE MAQUINAS
+
+Prompt:
+"Executei as heuristicas na maquina A e na maquina B. Compare os custos obtidos e me diga
+se os resultados sao identicos. Se houver alguma diferenca, investigue possiveis causas."
+
+Prompt:
+"A bateria das heuristicas terminou. Foram executadas centenas de combinacoes. Como
+posso verificar automaticamente se todas terminaram como completed e se os resultados
+sao consistentes?"
+
+PROMPTS SOBRE A BATERIA COMPLETA DO B&B
+
+Prompt:
+"Agora quero executar a bateria completa do Branch-and-Bound. Temos 15 instancias,
+5 estrategias de warm-start e timeout de 1800 segundos. Como devo configurar os workers
+e quais arquivos devo monitorar?"
+
+Prompt:
+"O computador ja esta configurado com o plano de energia adequado. Preciso alterar
+alguma configuracao do Windows antes de iniciar uma bateria longa de experimentos?"
+
+Prompt:
+"Quero manter um unico transcript durante a bateria. E melhor abrir outra janela para
+rodar analises enquanto o B&B esta executando ou devo esperar terminar?"
+
+PROMPTS SOBRE INTERPRETACAO DOS RESULTADOS
+
+Prompt:
+"A bateria terminou. Tenho resultados completed e timeout. Explique como interpretar
+essas categorias e quais campos ainda devem ser considerados validos em uma execucao
+que sofreu timeout."
+
+Prompt:
+"Todos os resultados completed chegaram ao otimo de referencia? Confira os custos e
+identifique qualquer divergencia."
+
+Prompt:
+"O transcript nao registrou toda a saida dos programas. Isso significa que os dados
+podem ter sido perdidos? Verifique se os CSVs sao a fonte correta para reconstruir
+os resultados."
+
+PROMPTS SOBRE PROFILING
+
+Prompt:
+"O profiling do Christofides mostra um custo alto no matching do NetworkX. Isso e
+consistente com a estrutura do algoritmo? Como devemos relatar esse gargalo?"
+
+Prompt:
+"Analise o profiling do Branch-and-Bound. O remaining_bound representa uma parcela
+muito grande do tempo e a MST tambem aparece como custo importante. Explique o que isso
+significa e quais partes devemos investigar."
+
+Prompt:
+"Existe uma suspeita de que a manipulacao da lista de vertices nao visitados seja um
+gargalo. Compare essa hipotese com os dados do profiling e diga se ela realmente merece
+ser tratada como gargalo."
+
+PROMPTS SOBRE GARBAGE COLLECTION
+
+Prompt:
+"Quero medir o efeito do garbage collector no desempenho das heuristicas. Como devo
+comparar GC ligado e desligado de maneira justa?"
+
+Prompt:
+"Os resultados mostram uma vantagem aparente de desligar o GC no Twice-around-the-tree.
+Investigue se isso pode ser um artefato causado pela ordem em que as duas condicoes
+foram executadas."
+
+Prompt:
+"Reescreva o experimento de comparacao do GC para alternar a ordem das condicoes e
+reduzir o vies experimental. Depois explique como interpretar os novos resultados."
+
+PROMPTS SOBRE SENSIBILIDADE
+
+Prompt:
+"Tenho varias caracteristicas geometricas das instancias: aspect ratio, hull fraction,
+spatial entropy, clustering density, coeficiente de variacao das distancias ao vizinho
+mais proximo e caracteristicas da MST. Quero saber quais delas explicam o tempo e o
+numero de nos do Branch-and-Bound. Sugira uma metodologia."
+
+Prompt:
+"Quero validar a analise de sensibilidade por familia de instancia usando GroupKFold.
+Explique como fazer essa validacao e por que ela e importante quando existem varias
+instancias da mesma familia."
+
+Prompt:
+"O R2 do modelo de Christofides caiu bastante quando usamos validacao por familia.
+Interprete esse resultado e explique o que ele diz sobre generalizacao."
+
+Prompt:
+"Existe uma familia de instancias em formato de circulo que parece inflar algumas
+correlacoes. Como posso repetir a analise sem essa familia e comparar os resultados
+de maneira honesta?"
+
+PROMPTS SOBRE VERIFICACAO DAS INSTANCIAS
+
+Prompt:
+"Confira os tipos das instancias exigidas pelo enunciado e classifique as instancias
+que estamos usando. Verifique especialmente se elas sao EUC_2D, GEO ou EXPLICIT."
+
+Prompt:
+"O enunciado exige instancias TSPLIB EUC_2D. Verifique se as instancias escolhidas
+atendem a esse requisito e indique qualquer possivel problema."
+
+PROMPTS SOBRE BACKUP E REPRODUTIBILIDADE
+
+Prompt:
+"Quero fazer um backup completo do projeto depois dos experimentos. Quais arquivos,
+CSV, logs e resultados devo incluir no zip para que outra pessoa consiga reproduzir
+a analise?"
+
+Prompt:
+"Depois da bateria principal, existe alguma execucao obrigatoria que ainda esteja
+faltando de acordo com o enunciado?"
+
+Prompt:
+"Revise o estado atual dos experimentos e diga se ja temos dados suficientes para
+o relatorio ou se existe alguma analise obrigatoria que ainda precisa ser executada."
+
+Prompt:
+"O que deve entrar no commit final do repositorio para preservar codigo, dados,
+scripts de analise e resultados sem incluir arquivos desnecessarios?"
+
+PROMPTS SOBRE O ESQUELETO DOS ALGORITMOS
+
+Prompt:
+"Estou começando a implementar o Branch-and-Bound para o TSP deste trabalho. Pode me
+ajudar a pensar em uma estrutura inicial de funções e arquivos para organizar essa
+implementacao?"
+
+Prompt:
+"Quero implementar uma MST que sera usada por outros algoritmos do projeto. Como voce
+sugere estruturar esse componente para que depois eu consiga reutiliza-lo em outras
+partes do codigo?"
+
+Prompt:
+"Estou comecando a implementar o Christofides para o TSP. Quais seriam as principais
+etapas que eu deveria separar no codigo para manter a implementacao organizada?"
+
+Prompt:
+"Como posso organizar a relacao entre Branch-and-Bound, MST e Christofides no projeto
+sem deixar os algoritmos muito acoplados?"
+
+Prompt:
+"Estou pensando em usar diferentes heuristicas como solucoes iniciais do Branch-and-Bound.
+Que tipo de interface ou organizacao seria interessante para permitir trocar essas
+heuristicas sem modificar muito o restante do codigo?"
+
+Prompt:
+"Gere um arquivo que seja capaz de testar a funcionalidade de todas as classes e funções implementadas.
+Momentaneamente o desempenho não é importante, quero testar apenas se tudo responde e funciona conforme
+o esperado."
+PROMPTS SOBRE ORGANIZACAO DAS PASTAS DO PROJETO
+
+Prompt:
+"Estou montando um projeto de Algoritmos 2 com varios algoritmos de TSP e uma parte
+experimental. Pode sugerir uma organizacao de pastas que facilite trabalhar e depois
+encontrar os arquivos?"
+
+Prompt:
+"Quero separar no projeto o codigo dos algoritmos, os experimentos, os resultados e
+a documentacao. Que organizacao de diretorios voce recomenda?"
+
+Prompt:
+"Tenho varios scripts de execucao e analise surgindo ao longo do projeto. Como posso
+organiza-los para nao misturar os scripts experimentais com a implementacao dos
+algoritmos?"
+
+PROMPTS SOBRE README E DOCUMENTACAO DAS MAQUINAS
+
+Prompt:
+"Quero criar um README.md para o projeto explicando de forma simples o que existe no
+repositorio, como as pastas estao organizadas e como executar o projeto. Pode sugerir
+uma estrutura para esse README?"
+
+Prompt:
+"Temos um arquivo chamado maquinas.txt com informacoes sobre as maquinas usadas nos
+experimentos. Como posso incorporar essas informacoes no README de uma forma organizada
+e util para documentar a reproducibilidade?"
+
+Prompt:
+"Leia as informacoes de maquinas.txt e sugira como apresenta-las no README.md. Nao
+precisa inventar informacoes que nao estejam no arquivo."
+
+Prompt:
+"Revise a estrutura do README.md e veja se esta faltando alguma informacao importante
+para que outra pessoa consiga entender o projeto e reproduzir os experimentos."
+
+
+* Nota:devido à perda de parte do histórico original da conversa, alguns prompts não 
+puderam ser recuperados em sua forma literal. Nesses casos, os prompts foram reconstruídos 
+posteriormente com o auxílio do agente, com base no contexto das tarefas realizadas, nos 
+arquivos gerados e nas etapas registradas durante o desenvolvimento. Portanto, esses trechos 
+devem ser considerados uma representação aproximada dos pedidos originais, e não uma 
+transcrição exata da conversa.

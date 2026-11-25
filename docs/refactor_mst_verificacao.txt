@@ -1,0 +1,57 @@
+base: bounds.py / branch_and_bound.py  |  otimizada: bounds_fast.py / branch_and_bound_fast.py
+
+1. mst_weight: base vs otimizado
+  400 subconjuntos aleatorios: OK
+
+2. remaining_bound (base) vs remaining_bound_shared (otimizado)
+  300 estados simulados: OK
+
+3. B&B completo: contadores identicos, tempo diferente
+  instanciainicio      expandidos base/otim           podados base/otim   t base   t otim  speedup
+  n11_s0   cold            575/575                   2396/2396             0.03s    0.01s    2.38x
+  n11_s0   NN              573/573                   2397/2397             0.03s    0.02s    1.96x
+  n11_s1   cold            545/545                   2439/2439             0.04s    0.01s    2.57x
+  n11_s1   NN              543/543                   2440/2440             0.03s    0.01s    2.43x
+  n12_s0   cold            819/819                   4209/4209             0.06s    0.02s    2.75x
+  n12_s0   NN              817/817                   4210/4210             0.05s    0.03s    1.97x
+  n12_s1   cold           1079/1079                  5353/5353             0.07s    0.03s    2.28x
+  n12_s1   NN             1077/1077                  5354/5354             0.07s    0.03s    2.49x
+  n13_s0   cold           1698/1698                  9583/9583             0.12s    0.05s    2.43x
+  n13_s0   NN             1696/1696                  9584/9584             0.11s    0.05s    2.47x
+  n13_s1   cold           2229/2229                 11822/11822            0.16s    0.06s    2.74x
+  n13_s1   NN             2227/2227                 11823/11823            0.16s    0.06s    2.86x
+
+  speedup: minimo 1.96x | mediana 2.45x | maximo 2.86x
+
+4. cProfile (n=13, seed=0, cold-start): top por tempo proprio
+
+--- BASE: 0.17s, 1698 nos ---
+         266090 function calls (264393 primitive calls) in 0.170 seconds
+   Ordered by: internal time
+   List reduced from 37 to 8 due to restriction <8>
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     4011    0.088    0.000    0.112    0.000 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\src\algorithms\exact\bounds.py:84(mst_weight)
+   1698/1    0.017    0.000    0.170    0.170 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\src\algorithms\exact\branch_and_bound.py:101(_dfs)
+    11275    0.013    0.000    0.026    0.000 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\src\algorithms\exact\bounds.py:61(min_out_sum)
+    29982    0.009    0.000    0.009    0.000 {method 'item' of 'numpy.generic' objects}
+    29982    0.008    0.000    0.008    0.000 {method 'argmin' of 'numpy.ndarray' objects}
+    11275    0.008    0.000    0.013    0.000 {built-in method builtins.min}
+    11280    0.007    0.000    0.146    0.000 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\src\algorithms\exact\bounds.py:115(remaining_bound)
+    80775    0.005    0.000    0.005    0.000 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\src\algorithms\exact\bounds.py:73(<genexpr>)
+
+--- OTIMIZADA: 0.09s, 1698 nos ---
+         220572 function calls (218875 primitive calls) in 0.087 seconds
+   Ordered by: internal time
+   List reduced from 42 to 8 due to restriction <8>
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1520    0.018    0.000    0.034    0.000 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\src\algorithms\exact\bounds_fast.py:139(mst_weight)
+   1698/1    0.016    0.000    0.087    0.087 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\src\algorithms\exact\branch_and_bound_fast.py:106(_dfs)
+    11275    0.012    0.000    0.024    0.000 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\src\algorithms\exact\bounds_fast.py:113(min_out_sum)
+    11275    0.007    0.000    0.012    0.000 {built-in method builtins.min}
+    80775    0.005    0.000    0.005    0.000 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\src\algorithms\exact\bounds_fast.py:125(<genexpr>)
+    11280    0.005    0.000    0.064    0.000 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\src\algorithms\exact\bounds_fast.py:222(remaining_bound_shared)
+     1520    0.004    0.000    0.009    0.000 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\.venv\lib\site-packages\numpy\lib\_index_tricks_impl.py:34(ix_)
+    11280    0.003    0.000    0.003    0.000 C:\Users\Henrique Medeiros\Downloads\tp2\teste extra\TP2-ALG2-main\TP2-ALG2-main\src\algorithms\exact\branch_and_bound_fast.py:151(<listcomp>)
+
+============================================================
+OK: limites identicos, contadores identicos.

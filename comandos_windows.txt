@@ -1,0 +1,128 @@
+REM ============================================================
+REM tp2 algoritmos 2 - comandos em windows (cmd), em sequencia
+REM pre-requisitos: python 3.10+ e git instalados, arquivos do
+REM projeto ja no repositorio (src, scripts, requirements.txt)
+REM ============================================================
+
+
+REM ---------- 0. entrar na raiz do repositorio ----------
+cd /d C:\caminho\para\TP2-ALG2
+
+
+REM ---------- 1. ambiente virtual e dependencias ----------
+py -3 -m venv .venv
+.venv\Scripts\activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+
+REM ---------- 2. pastas (erro de "ja existe" pode ignorar) ----------
+mkdir src\experiments
+mkdir scripts
+mkdir data\raw\tsplib
+mkdir data\processed\results
+mkdir report\figures
+mkdir report\tables
+mkdir docs\prompts
+type nul > src\__init__.py
+type nul > src\experiments\__init__.py
+
+
+REM ---------- 3. instancias ----------
+python scripts\prepare_instances.py
+REM opcional: confere o tipo das instancias citadas no enunciado
+python scripts\prepare_instances.py --inspect ulysses16 gr24 fri26 bays29 swiss42 att48
+
+
+REM ---------- 4. otimos de referencia ----------
+REM as 5 linhas conhecidas (eil51, berlin52, st70, wi29, dj38) devem sair com "ok"
+REM se alguma sair "DIFERENTE DO OTIMO CONHECIDO", pare e investigue
+REM pode demorar bastante, deixe esta janela aberta
+python scripts\compute_reference.py
+
+
+REM ---------- 5. features geometricas (outra janela cmd, mesma pasta) ----------
+cd /d C:\caminho\para\TP2-ALG2
+.venv\Scripts\activate
+python scripts\compute_features.py
+
+
+REM ---------- 6. teste do pipeline com algoritmos falsos ----------
+set TP2_FAKE=1
+python scripts\run_experiments.py --suite approx --group main --reps 2
+python scripts\run_experiments.py --suite warmstart --group main --time-limit 1 --workers 4
+python scripts\run_profiling.py --group main --max-n 30 --gc-reps 2
+python scripts\run_analysis.py
+
+REM limpa tudo que o teste falso gerou e desliga o modo falso
+set TP2_FAKE=
+del /q data\processed\results\algorithm_results.csv
+del /q data\processed\results\warm_start_results.csv
+del /q data\processed\results\profiling_results.csv
+del /q data\processed\results\memory_results.csv
+del /q data\processed\results\gc_results.csv
+rmdir /s /q data\processed\results\logs
+del /q report\tables\*
+del /q report\figures\*
+
+
+REM ---------- 7. teste de integracao com os algoritmos reais ----------
+REM so depois que a pessoa 1 entregar e o adapters.py estiver ajustado
+python scripts\run_experiments.py --suite approx --group main --max-n 25 --reps 2
+python scripts\run_experiments.py --suite warmstart --group main --max-n 25 --time-limit 60 --workers 2
+
+REM se algum status for "invalid" ou "error", veja os tracebacks em:
+dir data\processed\results\logs
+
+REM se o teste de integracao estiver ok, apague os resultados dele e siga
+del /q data\processed\results\algorithm_results.csv
+del /q data\processed\results\warm_start_results.csv
+rmdir /s /q data\processed\results\logs
+
+
+REM ---------- 8. descobrir nucleos fisicos (workers = nucleos fisicos - 1) ----------
+powershell -command "Get-CimInstance Win32_Processor | Select-Object NumberOfCores,NumberOfLogicalProcessors"
+
+
+REM ---------- 9. impedir suspensao do computador durante a bateria ----------
+powercfg /change standby-timeout-ac 0
+powercfg /change hibernate-timeout-ac 0
+powercfg /change monitor-timeout-ac 0
+
+
+REM ---------- 10. aproximadas (rapido, 1 worker para medir tempo bem) ----------
+python scripts\run_experiments.py --suite approx --group main,sens,scale --workers 1
+
+
+REM ---------- 11. profiling (antes da bateria longa, para nao disputar cpu) ----------
+python scripts\run_profiling.py --algos tat chr --group scale --gc-reps 3
+
+
+REM ---------- 12. bateria do branch-and-bound (a demorada) ----------
+REM troque 5 por nucleos fisicos - 1; abre uma janela propria e nao feche
+start "tp2-warmstart" cmd /k ".venv\Scripts\python.exe scripts\run_experiments.py --suite warmstart --group main --workers 5 --time-limit 1800"
+
+REM se a janela fechar ou o pc reiniciar, rode o MESMO comando de novo: ele retoma de onde parou
+
+
+REM ---------- 13. acompanhar o progresso (em outra janela) ----------
+find /c /v "" data\processed\results\warm_start_results.csv
+REM o total esperado e 75 execucoes + 1 linha de cabecalho = 76
+
+
+REM ---------- 14. depois que a bateria terminar ----------
+python scripts\run_profiling.py --algos bnb --warm nn --group main --max-n 25 --time-limit 60 --gc-reps 3
+python scripts\run_analysis.py
+
+
+REM ---------- 15. restaurar a suspensao (ajuste os minutos ao seu gosto) ----------
+powercfg /change standby-timeout-ac 30
+powercfg /change hibernate-timeout-ac 60
+powercfg /change monitor-timeout-ac 15
+
+
+REM ---------- 16. enviar para o github ----------
+git status
+git add data report docs scripts src requirements.txt
+git commit -m "resultados dos experimentos e analise"
+git push

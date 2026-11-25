@@ -1,0 +1,16 @@
+|--- mst_leaf_fraction <= 0.17
+|   |--- aspect_ratio <= 1.06
+|   |   |--- nn_cv <= 0.91
+|   |   |   |--- value: [0.47]
+|   |   |--- nn_cv >  0.91
+|   |   |   |--- value: [3.07]
+|   |--- aspect_ratio >  1.06
+|   |   |--- value: [5.40]
+|--- mst_leaf_fraction >  0.17
+|   |--- clark_evans <= 0.48
+|   |   |--- value: [8.12]
+|   |--- clark_evans >  0.48
+|   |   |--- n <= 37.00
+|   |   |   |--- value: [17.31]
+|   |   |--- n >  37.00
+|   |   |   |--- value: [23.09]

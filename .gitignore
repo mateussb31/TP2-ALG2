@@ -1,0 +1,35 @@
+# ambiente virtual
+.venv/
+venv/
+env/
+
+# cache do python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# editores e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# logs de erro do runner e saida do nohup
+data/processed/results/logs/
+nohup.out
+
+# arquivos auxiliares do latex (o .tex e o report.pdf continuam versionados)
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.log
+report/*.out
+report/*.toc
+report/*.fls
+report/*.fdb_latexmk
+report/*.synctex.gz
+
+*.md
+*.tsp
+*.tour

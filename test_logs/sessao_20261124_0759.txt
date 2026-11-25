@@ -1,0 +1,276 @@
+﻿**********************
+Início da transcrição do Windows PowerShell
+Hora de início: 20261124075924
+Nome de Usuário: DESKTOP-JPRS0DI\henri
+Executar como Usuário: DESKTOP-JPRS0DI\henri
+Nome da Configuração: 
+Computador: DESKTOP-JPRS0DI (Microsoft Windows NT 10.0.19045.0)
+Aplicativo Host: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\henri\AppData\Local\Programs\Microsoft VS Code\8a14f0cc1b\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+ID do Processo: 11560
+PSVersion: 5.1.19041.6456
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6456
+BuildVersion: 10.0.19041.6456
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcrição iniciada, o arquivo de saída é C:\tp2_logs\sessao_20261124_0759.txt
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) clear
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) Get-Content data\processed\results\logs\eil51_n25_tat_none.err
+
+Traceback (most recent call last):
+  File "C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2\src\experiments\worker.py", line 98, in main
+    fns = (adapters.heuristic(spec["algorithm"]),)
+  File "C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2\src\experiments\adapters.py", line 37, in heuristic
+    from src.algorithms.heuristics.twice_around_tree import solve
+ModuleNotFoundError: No module named 'src.algorithms.heuristics.twice_around_tree'
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) (Get-Content data\processed\results\algorithm_results.csv | Measure-Object -Line).Lines
+36
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) clear
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) Select-String -Path data\processed\results\algorithm_results.csv -Pattern "st70_n22" | ForEach-Object { "$($_.LineNumber): $($_.Line)" }
+7: st70_n22,main,22,trivial,none,on,2,NA,NA,1.1900003300979733e-05,4.5000051613897085e-06,NA,NA,NA,1.18,1221.0,1221.0,completed,2026-11-24T07:57:54
+8: st70_n22,main,22,nn,none,on,2,NA,NA,0.0001767499779816717,5.634999251924455e-05,NA,NA,NA,1.121,487.0,487.0,completed,2026-11-24T07:57:54
+9: st70_n22,main,22,hull,none,on,2,NA,NA,0.16227129998151213,0.16051080002216622,NA,NA,NA,27.621,427.0,427.0,completed,2026-11-24T07:57:55
+10: st70_n22,main,22,tat,none,on,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,error,2026-11-24T07:57:55
+11: st70_n22,main,22,chr,none,on,2,NA,NA,0.0034654999908525497,0.00022750001517124474,NA,NA,NA,1.234,467.0,467.0,completed,2026-11-24T07:57:55
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) clear
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) python -c "from src.algorithms.heuristics.twice_around_the_tree import solve; print(solve)"
+<function solve at 0x000002AFEB91B370>
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) Select-String -Path src\experiments\worker.py -Pattern "warm_up"
+
+src\experiments\worker.py:89:def warm_up(fns, spec):
+src\experiments\worker.py:106:        warm_up(fns, spec)
+
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) Remove-Item data\processed\results\algorithm_results.csv, data\processed\results\logs -Recurse -ErrorAction SilentlyContinue
+python scripts\run_experiments.py --suite approx --group main --max-n 25 --reps 2 --workers 1
+(Get-Content data\processed\results\algorithm_results.csv | Measure-Object -Line).Lines
+Import-Csv data\processed\results\algorithm_results.csv | Sort-Object { [int]$_.n }, algorithm | Select-Object instance, algorithm, status, total_time_s, best_cost | Format-Table -AutoSize | Out-String -Width 200
+
+36
+
+instance     algorithm status    total_time_s           best_cost
+--------     --------- ------    ------------           ---------
+eil51_n12    chr       completed 0.0005352000298444182  228.0    
+eil51_n12    hull      completed 0.001356399996438995   215.0    
+eil51_n12    nn        completed 0.00011655001435428858 293.0    
+eil51_n12    tat       completed 0.00023759997566230595 267.0    
+eil51_n12    trivial   completed 9.549985406920314e-06  406.0    
+berlin52_n14 chr       completed 0.0007588500156998634  4780.0   
+berlin52_n14 hull      completed 0.0014009999867994338  4765.0   
+berlin52_n14 nn        completed 0.00012075001723133028 4951.0   
+berlin52_n14 tat       completed 0.00032610000926069915 4966.0   
+berlin52_n14 trivial   completed 1.1149997590109706e-05 8065.0   
+st70_n16     chr       completed 0.001045450015226379   392.0    
+st70_n16     hull      completed 0.0014225500053726137  381.0    
+st70_n16     nn        completed 0.00013359999866224825 427.0    
+st70_n16     tat       completed 0.0002967999898828566  449.0    
+st70_n16     trivial   completed 9.950017556548119e-06  928.0    
+eil51_n18    chr       completed 0.0007775999838486314  228.0    
+eil51_n18    hull      completed 0.0015114500420168042  235.0    
+eil51_n18    nn        completed 0.00013479997869580984 271.0    
+eil51_n18    tat       completed 0.00032554997596889734 262.0    
+eil51_n18    trivial   completed 1.0200019460171461e-05 520.0    
+berlin52_n20 chr       completed 0.0013728499761782587  5348.0   
+berlin52_n20 hull      completed 0.0017894999764394015  5204.0   
+berlin52_n20 nn        completed 0.0001448499970138073  5446.0   
+berlin52_n20 tat       completed 0.0003881000156980008  5592.0   
+berlin52_n20 trivial   completed 1.3949989806860685e-05 10746.0  
+st70_n22     chr       completed 0.003070800012210384   467.0    
+st70_n22     hull      completed 0.0015290000010281801  427.0    
+st70_n22     nn        completed 0.00015470001380890608 487.0    
+st70_n22     tat       completed 0.00043635000474750996 519.0    
+st70_n22     trivial   completed 1.3150012819096446e-05 1221.0   
+eil51_n25    chr       completed 0.0020172499935142696  306.0    
+eil51_n25    hull      completed 0.0017590000061318278  303.0    
+eil51_n25    nn        completed 0.0001689000055193901  360.0    
+eil51_n25    tat       completed 0.00045870000030845404 375.0    
+eil51_n25    trivial   completed 1.2950011296197772e-05 744.0
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) clear
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) python -c "import psutil; print('fisicos:', psutil.cpu_count(logical=False), 'logicos:', psutil.cpu_count())"
+python scripts\run_experiments.py --suite warmstart --group main --max-n 20 --time-limit 60 --workers 2 --out data\processed\results\warm_start_test.csv
+Import-Csv data\processed\results\warm_start_test.csv | Sort-Object { [int]$_.n }, warm_start | Select-Object instance, warm_start, status, init_cost, final_cost, nodes_expanded, nodes_pruned, total_time_s | Format-Table -AutoSize | Out-String -Width 200
+fisicos: 6 logicos: 6
+[22/25] eil51_n12 bnb hull -> completed 0.15s
+[23/25] eil51_n12 bnb tat -> completed 0.21s
+[24/25] eil51_n12 bnb chr -> completed 0.18s
+[25/25] berlin52_n14 bnb chr -> completed 15.38s
+
+instance     warm_start status    init_cost final_cost nodes_expanded nodes_pruned total_time_s       
+--------     ---------- ------    --------- ---------- -------------- ------------ ------------       
+eil51_n12    chr        completed 228.0     215.0      2118           10942        0.1802300000563264 
+eil51_n12    hull       completed 215.0     215.0      1690           9408         0.15391670004464686
+eil51_n12    nn         completed 293.0     215.0      3023           13224        0.20783999998820946
+eil51_n12    tat        completed 267.0     215.0      3017           13224        0.21029870002530515
+eil51_n12    trivial    completed 406.0     215.0      3025           13223        0.20961570006329566
+berlin52_n14 chr        completed 4780.0    4706.0     108151         529702       15.377412000030745 
+berlin52_n14 hull       completed 4765.0    4706.0     108151         529702       15.205750400025863 
+berlin52_n14 nn         completed 4951.0    4706.0     108153         529701       15.174796000006609 
+berlin52_n14 tat        completed 4966.0    4706.0     108155         529700       14.966549700009637 
+berlin52_n14 trivial    completed 8065.0    4706.0     108155         529700       14.885126499983016 
+st70_n16     chr        completed 392.0     370.0      36570          258736       9.80519040004583   
+st70_n16     hull       completed 381.0     370.0      36217          256856       9.894920400052797  
+st70_n16     nn         completed 427.0     370.0      36625          258836       9.734370699967258  
+st70_n16     tat        completed 449.0     370.0      36627          258835       9.766438099963125  
+st70_n16     trivial    completed 928.0     370.0      36627          258835       9.724356999970041  
+eil51_n18    chr        completed 228.0     224.0      5260           51857        1.600630100001581  
+eil51_n18    hull       completed 235.0     224.0      5313           52005        1.6677078999928199 
+eil51_n18    nn         completed 271.0     224.0      5425           52228        1.6615767999901436 
+eil51_n18    tat        completed 262.0     224.0      5424           52227        1.5979725999641232 
+eil51_n18    trivial    completed 520.0     224.0      5427           52227        1.7442529000109062 
+berlin52_n20 chr        timeout   5348.0    NA         305690         2503526      60.0030464999727   
+berlin52_n20 hull       timeout   5204.0    NA         300432         2458992      60.00203519995557  
+berlin52_n20 nn         timeout   5446.0    NA         304220         2491172      60.00127909996081  
+berlin52_n20 tat        timeout   5592.0    NA         301623         2469833      60.00375819992041  
+berlin52_n20 trivial    timeout   10746.0   NA         303373         2484211      60.00025069992989
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) robocopy . C:\tp2 /E /XD .venv __pycache__ /XF algorithm_results.csv warm_start_test.csv /NFL /NDL
+
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) Compress-Archive -Path C:\tp2 -DestinationPath C:\tp2.zip -Force
+
+(.venv) TerminatingError(New-Object): "Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado.""
+(.venv) TerminatingError(New-Object): "Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado.""
+>> TerminatingError(New-Object): "Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado.""
+>> TerminatingError(New-Object): "Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado.""
+New-Object : Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado."
+No 
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Archive\Microsoft.PowerShell.Archive.psm1:729 
+caractere:30
++ ... ileStream = New-Object -TypeName System.IO.FileStream -ArgumentList $ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-Object], MethodInvocationException
+    + FullyQualifiedErrorId : ConstructorInvokedThrowException,Microsoft.PowerShell.Commands.NewObjectCommand
+New-Object : Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado."
+No C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Archive\Microsoft.PowerShell.Archive.psm1:729 caractere:30
++ ... ileStream = New-Object -TypeName System.IO.FileStream -ArgumentList $ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-Object], MethodInvocationException
+    + FullyQualifiedErrorId : ConstructorInvokedThrowException,Microsoft.PowerShell.Commands.NewObjectCommand
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) clear
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) python --version
+python scripts\compute_reference.py --group sens
+robocopy . C:\tp2 /E /XD .venv __pycache__ /XF algorithm_results.csv warm_start_test.csv /NFL /NDL
+Compress-Archive -Path C:\tp2 -DestinationPath C:\tp2.zip -Force
+Get-Item C:\tp2.zip | Select-Object Length
+Python 3.10.11
+syn_circle_n60_s2        n=60   opt=2816.0 optimal 0.1s
+syn_circle_n75_s0        n=75   opt=2823.0 optimal 0.4s
+syn_circle_n75_s1        n=75   opt=2822.0 optimal 0.1s
+syn_circle_n75_s2        n=75   opt=2824.0 optimal 0.3s
+
+(.venv) TerminatingError(New-Object): "Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado.""
+(.venv) TerminatingError(New-Object): "Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado.""
+>> TerminatingError(New-Object): "Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado.""
+>> TerminatingError(New-Object): "Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado.""
+New-Object : Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado."
+No 
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Archive\Microsoft.PowerShell.Archive.psm1:729 
+caractere:30
++ ... ileStream = New-Object -TypeName System.IO.FileStream -ArgumentList $ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-Object], MethodInvocationException
+    + FullyQualifiedErrorId : ConstructorInvokedThrowException,Microsoft.PowerShell.Commands.NewObjectCommand
+New-Object : Exceção ao chamar ".ctor" com "2" argumento(s): "O acesso ao caminho 'C:\tp2.zip' foi negado."
+No C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Archive\Microsoft.PowerShell.Archive.psm1:729 caractere:30
++ ... ileStream = New-Object -TypeName System.IO.FileStream -ArgumentList $ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-Object], MethodInvocationException
+    + FullyQualifiedErrorId : ConstructorInvokedThrowException,Microsoft.PowerShell.Commands.NewObjectCommand
+
+Get-Item : Não é possível localizar o caminho 'C:\tp2.zip' porque ele não existe.
+No linha:5 caractere:1
++ Get-Item C:\tp2.zip | Select-Object Length
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\tp2.zip:String) [Get-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetItemCommand
+Get-Item : Não é possível localizar o caminho 'C:\tp2.zip' porque ele não existe.
+No linha:5 caractere:1
++ Get-Item C:\tp2.zip | Select-Object Length
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\tp2.zip:String) [Get-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetItemCommand
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) clear
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) Compress-Archive -Path C:\tp2 -DestinationPath C:\tp2_logs\tp2.zip -Force
+Get-Item C:\tp2_logs\tp2.zip | Select-Object FullName, Length
+
+FullName            Length
+--------            ------
+C:\tp2_logs\tp2.zip 139561
+
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) clear
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) $p = python -c "import graph.matching as m; print(m.__file__)"
+$p
+Get-Content $p -Encoding UTF8 | Set-Clipboard
+C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2\graph\matching.py
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) clear
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) Get-Content "graph\matching.py" -Encoding UTF8 | Set-Clipboard
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) Get-ChildItem C:\tp2\graph | Select-Object Name, Length
+Get-ChildItem C:\tp2\data\processed\results | Select-Object Name, Length
+Get-ChildItem C:\tp2\data\processed\instances | Measure-Object | Select-Object Count
+
+Name                       Length
+----                       ------
+eulerian.py                  2906
+matching.py                  2445
+mst.py                       2506
+__init__.py                     0
+logs
+environment_approx.json       605
+environment_warmstart.json    651
+geometric_features.csv      10979
+reference_optima.csv         3561
+
+
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) clear
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) (Get-ChildItem C:\tp2\data\processed\instances -File).Count
+Get-ChildItem C:\tp2\data\processed\results\logs -ErrorAction SilentlyContinue | Select-Object Name
+87
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) Remove-Item C:\tp2\data\processed\results\logs -Recurse -Force -ErrorAction SilentlyContinue
+Compress-Archive -Path C:\tp2 -DestinationPath C:\tp2_logs\tp2.zip -Force
+Get-Item C:\tp2_logs\tp2.zip | Select-Object FullName, Length, LastWriteTime
+
+FullName            Length LastWriteTime
+--------            ------ -------------
+C:\tp2_logs\tp2.zip 139421 24/11/2026 08:30:02
+
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) clear
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5chenri\x5cOneDrive\x5cDesktop\x5cDocumentos\x5cUFMG\x5c2026.2\x5cALG 2\x5ctp2\x5cTP2-ALG2PS C:\Users\henri\OneDrive\Desktop\Documentos\UFMG\2026.2\ALG 2\tp2\TP2-ALG2> ]633;B
+(.venv) Stop-Transcript
+**********************
+Fim da transcrição do Windows PowerShell
+Hora de término: 20261124083142
+**********************

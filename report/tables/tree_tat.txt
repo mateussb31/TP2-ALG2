@@ -1,0 +1,19 @@
+|--- aspect_ratio <= 1.09
+|   |--- nn_cv <= 0.80
+|   |   |--- spatial_entropy <= 0.92
+|   |   |   |--- value: [22.42]
+|   |   |--- spatial_entropy >  0.92
+|   |   |   |--- value: [32.19]
+|   |--- nn_cv >  0.80
+|   |   |--- spatial_entropy <= 0.87
+|   |   |   |--- value: [31.38]
+|   |   |--- spatial_entropy >  0.87
+|   |   |   |--- value: [51.33]
+|--- aspect_ratio >  1.09
+|   |--- mst_leaf_fraction <= 0.17
+|   |   |--- value: [4.88]
+|   |--- mst_leaf_fraction >  0.17
+|   |   |--- spatial_entropy <= 0.67
+|   |   |   |--- value: [9.29]
+|   |   |--- spatial_entropy >  0.67
+|   |   |   |--- value: [20.49]

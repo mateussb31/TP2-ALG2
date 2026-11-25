@@ -1,0 +1,19 @@
+|--- mst_leaf_fraction <= 0.19
+|   |--- clark_evans <= 1.00
+|   |   |--- aspect_ratio <= 1.03
+|   |   |   |--- value: [0.01]
+|   |   |--- aspect_ratio >  1.03
+|   |   |   |--- value: [0.51]
+|   |--- clark_evans >  1.00
+|   |   |--- value: [4.54]
+|--- mst_leaf_fraction >  0.19
+|   |--- spatial_entropy <= 0.73
+|   |   |--- clark_evans <= 0.41
+|   |   |   |--- value: [3.40]
+|   |   |--- clark_evans >  0.41
+|   |   |   |--- value: [5.33]
+|   |--- spatial_entropy >  0.73
+|   |   |--- mst_leaf_fraction <= 0.22
+|   |   |   |--- value: [5.94]
+|   |   |--- mst_leaf_fraction >  0.22
+|   |   |   |--- value: [9.80]

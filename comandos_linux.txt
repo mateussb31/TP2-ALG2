@@ -1,0 +1,110 @@
+# ============================================================
+# tp2 algoritmos 2 - comandos em linux (bash), em sequencia
+# pre-requisitos: python 3.10+ (com venv), git e tmux instalados
+# ubuntu/debian: sudo apt install python3-venv git tmux
+# ============================================================
+
+
+# ---------- 0. entrar na raiz do repositorio ----------
+cd ~/caminho/para/TP2-ALG2
+
+
+# ---------- 1. ambiente virtual e dependencias ----------
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+
+# ---------- 2. pastas ----------
+mkdir -p src/experiments scripts data/raw/tsplib data/processed/results
+mkdir -p report/figures report/tables docs/prompts
+touch src/__init__.py src/experiments/__init__.py
+
+
+# ---------- 3. instancias ----------
+python scripts/prepare_instances.py
+# opcional: confere o tipo das instancias citadas no enunciado
+python scripts/prepare_instances.py --inspect ulysses16 gr24 fri26 bays29 swiss42 att48
+
+
+# ---------- 4. otimos de referencia ----------
+# as 5 linhas conhecidas (eil51, berlin52, st70, wi29, dj38) devem sair com "ok"
+# se alguma sair "DIFERENTE DO OTIMO CONHECIDO", pare e investigue
+# pode demorar bastante, deixe este terminal aberto
+python scripts/compute_reference.py
+
+
+# ---------- 5. features geometricas (outro terminal, mesma pasta) ----------
+cd ~/caminho/para/TP2-ALG2
+source .venv/bin/activate
+python scripts/compute_features.py
+
+
+# ---------- 6. teste do pipeline com algoritmos falsos ----------
+export TP2_FAKE=1
+python scripts/run_experiments.py --suite approx --group main --reps 2
+python scripts/run_experiments.py --suite warmstart --group main --time-limit 1 --workers 4
+python scripts/run_profiling.py --group main --max-n 30 --gc-reps 2
+python scripts/run_analysis.py
+
+# limpa tudo que o teste falso gerou e desliga o modo falso
+unset TP2_FAKE
+rm -f data/processed/results/{algorithm_results,warm_start_results,profiling_results,memory_results,gc_results}.csv
+rm -rf data/processed/results/logs
+rm -f report/tables/* report/figures/*
+
+
+# ---------- 7. teste de integracao com os algoritmos reais ----------
+# so depois que a pessoa 1 entregar e o adapters.py estiver ajustado
+python scripts/run_experiments.py --suite approx --group main --max-n 25 --reps 2
+python scripts/run_experiments.py --suite warmstart --group main --max-n 25 --time-limit 60 --workers 2
+
+# se algum status for "invalid" ou "error", veja os tracebacks em:
+ls data/processed/results/logs
+
+# se o teste de integracao estiver ok, apague os resultados dele e siga
+rm -f data/processed/results/{algorithm_results,warm_start_results}.csv
+rm -rf data/processed/results/logs
+
+
+# ---------- 8. nucleos fisicos e numero de workers (nucleos fisicos - 1) ----------
+CORES=$(lscpu -p=CORE,SOCKET | grep -v '^#' | sort -u | wc -l)
+W=$(( CORES > 1 ? CORES - 1 : 1 ))
+echo "nucleos fisicos: $CORES | workers: $W"
+
+
+# ---------- 9. aproximadas (rapido, 1 worker para medir tempo bem) ----------
+python scripts/run_experiments.py --suite approx --group main,sens,scale --workers 1
+
+
+# ---------- 10. profiling (antes da bateria longa, para nao disputar cpu) ----------
+python scripts/run_profiling.py --algos tat chr --group scale --gc-reps 3
+
+
+# ---------- 11. bateria do branch-and-bound (a demorada) ----------
+# roda dentro do tmux, sobrevive se voce fechar o terminal;
+# o systemd-inhibit impede a suspensao do computador enquanto roda
+tmux new-session -d -s tp2 "systemd-inhibit --what=sleep:idle --who=tp2 --why='bateria tp2' .venv/bin/python scripts/run_experiments.py --suite warmstart --group main --workers $W --time-limit 1800"
+
+# ver o que esta acontecendo (para sair sem matar: ctrl+b, depois d)
+tmux attach -t tp2
+
+# se o pc reiniciar ou o processo morrer, rode o MESMO comando de novo: ele retoma de onde parou
+
+
+# ---------- 12. acompanhar o progresso (em outro terminal) ----------
+wc -l data/processed/results/warm_start_results.csv
+# o total esperado e 75 execucoes + 1 linha de cabecalho = 76
+
+
+# ---------- 13. depois que a bateria terminar ----------
+python scripts/run_profiling.py --algos bnb --warm nn --group main --max-n 25 --time-limit 60 --gc-reps 3
+python scripts/run_analysis.py
+
+
+# ---------- 14. enviar para o github ----------
+git status
+git add data report docs scripts src requirements.txt
+git commit -m "resultados dos experimentos e analise"
+git push

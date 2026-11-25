@@ -1,0 +1,87 @@
+name,path,group,n,source
+wi29,data/processed/instances/wi29.tsp,main,29,original
+dj38,data/processed/instances/dj38.tsp,main,38,original
+eil51,data/processed/instances/eil51.tsp,main,51,original
+berlin52,data/processed/instances/berlin52.tsp,main,52,original
+st70,data/processed/instances/st70.tsp,main,70,original
+eil51_n12,data/processed/instances/eil51_n12.tsp,main,12,subconjunto de eil51
+berlin52_n14,data/processed/instances/berlin52_n14.tsp,main,14,subconjunto de berlin52
+st70_n16,data/processed/instances/st70_n16.tsp,main,16,subconjunto de st70
+eil51_n18,data/processed/instances/eil51_n18.tsp,main,18,subconjunto de eil51
+berlin52_n20,data/processed/instances/berlin52_n20.tsp,main,20,subconjunto de berlin52
+st70_n22,data/processed/instances/st70_n22.tsp,main,22,subconjunto de st70
+eil51_n25,data/processed/instances/eil51_n25.tsp,main,25,subconjunto de eil51
+berlin52_n28,data/processed/instances/berlin52_n28.tsp,main,28,subconjunto de berlin52
+st70_n32,data/processed/instances/st70_n32.tsp,main,32,subconjunto de st70
+eil51_n36,data/processed/instances/eil51_n36.tsp,main,36,subconjunto de eil51
+syn_uniform_n20_s0,data/processed/instances/syn_uniform_n20_s0.tsp,sens,20,sintetica uniform
+syn_uniform_n20_s1,data/processed/instances/syn_uniform_n20_s1.tsp,sens,20,sintetica uniform
+syn_uniform_n20_s2,data/processed/instances/syn_uniform_n20_s2.tsp,sens,20,sintetica uniform
+syn_uniform_n30_s0,data/processed/instances/syn_uniform_n30_s0.tsp,sens,30,sintetica uniform
+syn_uniform_n30_s1,data/processed/instances/syn_uniform_n30_s1.tsp,sens,30,sintetica uniform
+syn_uniform_n30_s2,data/processed/instances/syn_uniform_n30_s2.tsp,sens,30,sintetica uniform
+syn_uniform_n40_s0,data/processed/instances/syn_uniform_n40_s0.tsp,sens,40,sintetica uniform
+syn_uniform_n40_s1,data/processed/instances/syn_uniform_n40_s1.tsp,sens,40,sintetica uniform
+syn_uniform_n40_s2,data/processed/instances/syn_uniform_n40_s2.tsp,sens,40,sintetica uniform
+syn_uniform_n60_s0,data/processed/instances/syn_uniform_n60_s0.tsp,sens,60,sintetica uniform
+syn_uniform_n60_s1,data/processed/instances/syn_uniform_n60_s1.tsp,sens,60,sintetica uniform
+syn_uniform_n60_s2,data/processed/instances/syn_uniform_n60_s2.tsp,sens,60,sintetica uniform
+syn_uniform_n75_s0,data/processed/instances/syn_uniform_n75_s0.tsp,sens,75,sintetica uniform
+syn_uniform_n75_s1,data/processed/instances/syn_uniform_n75_s1.tsp,sens,75,sintetica uniform
+syn_uniform_n75_s2,data/processed/instances/syn_uniform_n75_s2.tsp,sens,75,sintetica uniform
+syn_clustered_n20_s0,data/processed/instances/syn_clustered_n20_s0.tsp,sens,20,sintetica clustered
+syn_clustered_n20_s1,data/processed/instances/syn_clustered_n20_s1.tsp,sens,20,sintetica clustered
+syn_clustered_n20_s2,data/processed/instances/syn_clustered_n20_s2.tsp,sens,20,sintetica clustered
+syn_clustered_n30_s0,data/processed/instances/syn_clustered_n30_s0.tsp,sens,30,sintetica clustered
+syn_clustered_n30_s1,data/processed/instances/syn_clustered_n30_s1.tsp,sens,30,sintetica clustered
+syn_clustered_n30_s2,data/processed/instances/syn_clustered_n30_s2.tsp,sens,30,sintetica clustered
+syn_clustered_n40_s0,data/processed/instances/syn_clustered_n40_s0.tsp,sens,40,sintetica clustered
+syn_clustered_n40_s1,data/processed/instances/syn_clustered_n40_s1.tsp,sens,40,sintetica clustered
+syn_clustered_n40_s2,data/processed/instances/syn_clustered_n40_s2.tsp,sens,40,sintetica clustered
+syn_clustered_n60_s0,data/processed/instances/syn_clustered_n60_s0.tsp,sens,60,sintetica clustered
+syn_clustered_n60_s1,data/processed/instances/syn_clustered_n60_s1.tsp,sens,60,sintetica clustered
+syn_clustered_n60_s2,data/processed/instances/syn_clustered_n60_s2.tsp,sens,60,sintetica clustered
+syn_clustered_n75_s0,data/processed/instances/syn_clustered_n75_s0.tsp,sens,75,sintetica clustered
+syn_clustered_n75_s1,data/processed/instances/syn_clustered_n75_s1.tsp,sens,75,sintetica clustered
+syn_clustered_n75_s2,data/processed/instances/syn_clustered_n75_s2.tsp,sens,75,sintetica clustered
+syn_elongated_n20_s0,data/processed/instances/syn_elongated_n20_s0.tsp,sens,20,sintetica elongated
+syn_elongated_n20_s1,data/processed/instances/syn_elongated_n20_s1.tsp,sens,20,sintetica elongated
+syn_elongated_n20_s2,data/processed/instances/syn_elongated_n20_s2.tsp,sens,20,sintetica elongated
+syn_elongated_n30_s0,data/processed/instances/syn_elongated_n30_s0.tsp,sens,30,sintetica elongated
+syn_elongated_n30_s1,data/processed/instances/syn_elongated_n30_s1.tsp,sens,30,sintetica elongated
+syn_elongated_n30_s2,data/processed/instances/syn_elongated_n30_s2.tsp,sens,30,sintetica elongated
+syn_elongated_n40_s0,data/processed/instances/syn_elongated_n40_s0.tsp,sens,40,sintetica elongated
+syn_elongated_n40_s1,data/processed/instances/syn_elongated_n40_s1.tsp,sens,40,sintetica elongated
+syn_elongated_n40_s2,data/processed/instances/syn_elongated_n40_s2.tsp,sens,40,sintetica elongated
+syn_elongated_n60_s0,data/processed/instances/syn_elongated_n60_s0.tsp,sens,60,sintetica elongated
+syn_elongated_n60_s1,data/processed/instances/syn_elongated_n60_s1.tsp,sens,60,sintetica elongated
+syn_elongated_n60_s2,data/processed/instances/syn_elongated_n60_s2.tsp,sens,60,sintetica elongated
+syn_elongated_n75_s0,data/processed/instances/syn_elongated_n75_s0.tsp,sens,75,sintetica elongated
+syn_elongated_n75_s1,data/processed/instances/syn_elongated_n75_s1.tsp,sens,75,sintetica elongated
+syn_elongated_n75_s2,data/processed/instances/syn_elongated_n75_s2.tsp,sens,75,sintetica elongated
+syn_circle_n20_s0,data/processed/instances/syn_circle_n20_s0.tsp,sens,20,sintetica circle
+syn_circle_n20_s1,data/processed/instances/syn_circle_n20_s1.tsp,sens,20,sintetica circle
+syn_circle_n20_s2,data/processed/instances/syn_circle_n20_s2.tsp,sens,20,sintetica circle
+syn_circle_n30_s0,data/processed/instances/syn_circle_n30_s0.tsp,sens,30,sintetica circle
+syn_circle_n30_s1,data/processed/instances/syn_circle_n30_s1.tsp,sens,30,sintetica circle
+syn_circle_n30_s2,data/processed/instances/syn_circle_n30_s2.tsp,sens,30,sintetica circle
+syn_circle_n40_s0,data/processed/instances/syn_circle_n40_s0.tsp,sens,40,sintetica circle
+syn_circle_n40_s1,data/processed/instances/syn_circle_n40_s1.tsp,sens,40,sintetica circle
+syn_circle_n40_s2,data/processed/instances/syn_circle_n40_s2.tsp,sens,40,sintetica circle
+syn_circle_n60_s0,data/processed/instances/syn_circle_n60_s0.tsp,sens,60,sintetica circle
+syn_circle_n60_s1,data/processed/instances/syn_circle_n60_s1.tsp,sens,60,sintetica circle
+syn_circle_n60_s2,data/processed/instances/syn_circle_n60_s2.tsp,sens,60,sintetica circle
+syn_circle_n75_s0,data/processed/instances/syn_circle_n75_s0.tsp,sens,75,sintetica circle
+syn_circle_n75_s1,data/processed/instances/syn_circle_n75_s1.tsp,sens,75,sintetica circle
+syn_circle_n75_s2,data/processed/instances/syn_circle_n75_s2.tsp,sens,75,sintetica circle
+scale_n10,data/processed/instances/scale_n10.tsp,scale,10,sintetica uniform
+scale_n20,data/processed/instances/scale_n20.tsp,scale,20,sintetica uniform
+scale_n30,data/processed/instances/scale_n30.tsp,scale,30,sintetica uniform
+scale_n40,data/processed/instances/scale_n40.tsp,scale,40,sintetica uniform
+scale_n50,data/processed/instances/scale_n50.tsp,scale,50,sintetica uniform
+scale_n60,data/processed/instances/scale_n60.tsp,scale,60,sintetica uniform
+scale_n75,data/processed/instances/scale_n75.tsp,scale,75,sintetica uniform
+scale_n100,data/processed/instances/scale_n100.tsp,scale,100,sintetica uniform
+scale_n150,data/processed/instances/scale_n150.tsp,scale,150,sintetica uniform
+scale_n200,data/processed/instances/scale_n200.tsp,scale,200,sintetica uniform
+scale_n300,data/processed/instances/scale_n300.tsp,scale,300,sintetica uniform
